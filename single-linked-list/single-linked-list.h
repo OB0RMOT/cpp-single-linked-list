@@ -342,7 +342,7 @@ public:
 	Iterator EraseAfter(ConstIterator pos) noexcept
 	{
 		assert(!IsEmpty());
-
+		assert(head_.next_node != nullptr);
 		Node *temp = pos.node_->next_node->next_node;
 		delete pos.node_->next_node;
 		pos.node_->next_node = temp;
